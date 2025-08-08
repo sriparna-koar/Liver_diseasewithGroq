@@ -197,7 +197,7 @@ except Exception as e:
 # Initialize Groq AI and LangChain components
 # IMPORTANT: In a real application, retrieve API key securely, e.g., from environment variables
 # For demonstration purposes, hardcoding it here as per user's prompt.
-# groq_api_key = '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' 
+
 groq_api_key = os.getenv("GROQ_API_KEY")
 llm = None
 if not groq_api_key:
