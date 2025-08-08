@@ -6,6 +6,12 @@ import os
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
+import os
+
+
+
+from dotenv import load_dotenv
+load_dotenv()
 
 # --- File Loading Helper Functions ---
 def load_file(filepath, description):
@@ -191,8 +197,8 @@ except Exception as e:
 # Initialize Groq AI and LangChain components
 # IMPORTANT: In a real application, retrieve API key securely, e.g., from environment variables
 # For demonstration purposes, hardcoding it here as per user's prompt.
-groq_api_key = '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' 
-
+# groq_api_key = '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' 
+groq_api_key = os.getenv("GROQ_API_KEY")
 llm = None
 if not groq_api_key:
     st.sidebar.warning("🤖 AI recommendations are disabled. Please set the **GROQ_API_KEY** environment variable to enable this feature.")
